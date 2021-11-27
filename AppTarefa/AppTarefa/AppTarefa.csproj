@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fontes\Montserrat-Bold.ttf" />
+    <None Remove="Resources\Fontes\Montserrat-Light.ttf" />
+    <None Remove="Resources\Fontes\Montserrat-Medium.ttf" />
+    <None Remove="Resources\Fontes\Montserrat-Regular.ttf" />
+    <None Remove="Resources\Fontes\Montserrat-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fontes\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fontes\Montserrat-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fontes\Montserrat-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fontes\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fontes\Montserrat-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.14" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2012" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Telas\Visualizar.xaml.cs">
+      <DependentUpon>Visualizar.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Telas\Cadastrar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Telas\Listar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Telas\Visualizar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

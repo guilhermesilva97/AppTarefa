@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTarefa.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="TituloCampo" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="MontRegular" />
+            </Style>
+
+            <Style x:Key="DescricaoCampo" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="#888" />
+                <Setter Property="FontFamily" Value="MontLight" />
+            </Style>
+
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+
+            <Style x:Key="BaseEntradaCampo" TargetType="InputView">
+                <Setter Property="PlaceholderColor" Value="Black" />
+                <Setter Property="TextColor" Value="#888" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style x:Key="EntradaCampo" TargetType="Entry" BasedOn="{StaticResource BaseEntradaCampo}">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="MontRegular" />
+            </Style>
+
+            <Style x:Key="EntradaCampoEditor" TargetType="Editor" BasedOn="{StaticResource BaseEntradaCampo}">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="MontRegular" />
+                <Setter Property="AutoSize" Value="TextChanges" />
+            </Style>
+
+            <Style x:Key="btnSalvar" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#4043c9" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Visual" Value="Default" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Padding" Value="20,10" />
+            </Style>
+            
+            <Style x:Key="LabelVisualizarTitulo" TargetType="Label" >
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="MontRegular" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+
+            <Style x:Key="LabelListarTitulo" TargetType="Label" >
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="MontThin" />
+                <Setter Property="TextColor" Value="#888888" />
+            </Style>
+
+            <Style x:Key="LabelListarDetalhes" TargetType="Label" >
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="MontLight" />
+                <Setter Property="TextColor" Value="#939393" />
+            </Style>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+             BackgroundColor="Transparent"
+             x:Class="AppTarefa.Telas.Cadastrar">
+    <ContentPage.Content>
+        <ScrollView>
+            <Frame BackgroundColor="#F5F6FA" CornerRadius="10" HasShadow="True" Margin="30">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                        <Label HorizontalOptions="FillAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Criar" FontFamily="MontRegular" FontSize="16" TextColor="Black"/>
+                                    <Span Text="&#10;"/>
+                                    <Span Text="Tarefa" FontFamily="MontBold" FontAttributes="Bold" FontSize="22" TextColor="Black"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Text="X" FontFamily="MontRegular" FontSize="20" Padding="20,0,0,20" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FecharModal"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </StackLayout>
+
+                    <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal" Padding="15">
+                            <DatePicker IsVisible="False" x:Name="Data" BackgroundColor="White" Unfocused="Data_Unfocused" />
+                            <Label Text="Data" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Style="{StaticResource TituloCampo}"/>
+                            <Label Text="" x:Name="lblData" VerticalTextAlignment="Center" Style="{StaticResource DescricaoCampo}"/>
+                            <Image Source="calendar.png"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal" Padding="15">
+                            <TimePicker IsVisible="False" x:Name="HorarioInicial" BackgroundColor="White" Unfocused="HorarioInicial_Unfocused"/>
+                            <TimePicker IsVisible="False" x:Name="HorarioFinal" BackgroundColor="White" Unfocused="HorarioFinal_Unfocused" />
+                            <Label Text="Horário" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Style="{StaticResource TituloCampo}"/>
+                            <Label VerticalTextAlignment="Center" Style="{StaticResource DescricaoCampo}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Início" x:Name="lblInicial"/>
+                                        <Span Text=" - " />
+                                        <Span Text="Fim" x:Name="lblFinal"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Padding="0" CornerRadius="0" BorderColor="#EDEDED" Visual="Material">
+                        <Entry Visual="Material" Placeholder="Tarefa" x:Name="Nome" Style="{StaticResource EntradaCampo}"/>
+                    </Frame>
+                    <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED" >
+                        <Editor Placeholder="Nota" x:Name="Nota" AutoSize="TextChanges" Style="{StaticResource EntradaCampoEditor}" Visual="Material"/>
+                    </Frame>
+                    <Button Text="Adicionar" Clicked="AdicionarTarefa" Style="{StaticResource btnSalvar}"/>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
